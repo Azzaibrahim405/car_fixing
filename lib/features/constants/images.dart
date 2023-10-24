@@ -72,7 +72,7 @@ class Assets {
 
   /// Assets for imagesHome
   /// assets/images/home.svg
-  static const String imagesHome = "assets/images/home.svg";
+  static const String imagesHome = "images/home.svg";
 
   /// Assets for imagesIcon awesomeShare
   /// assets/images/Icon awesome-share.svg

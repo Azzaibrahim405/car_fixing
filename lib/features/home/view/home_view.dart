@@ -39,6 +39,7 @@ class _HomeViewState extends State<HomeView> {
     ];
     List<String> images = [
       'images/download.jpeg',
+      'images/fix2.jpg',
       'images/images (1).jpeg',
       'images/download (1).jpeg',
       'images/download (2).jpeg'
@@ -220,8 +221,13 @@ class _HomeViewState extends State<HomeView> {
                             crossAxisCount: 2,
                             crossAxisSpacing: 10.0,
                             mainAxisSpacing: 10.0),
-                    itemBuilder: (context, index) => CategoryItem(
-                        image: images[index], title: titles[index]),
+                    itemBuilder: (context, index) => InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, RoutePaths.productDetailsPath);
+                      },
+                      child: CategoryItem(
+                          image: images[index], title: titles[index]),
+                    ),
                     itemCount: 4);
               },
             )

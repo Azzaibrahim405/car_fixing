@@ -1,7 +1,9 @@
-// import 'package:flutter/material.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'route_paths.dart';
-//
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../features/layout/view/layout_view.dart';
+import '../../features/layout/view_model/layout_cubit/cubit.dart';
+import 'route_paths.dart';
+
 import 'package:car_fixing/core/router/route_paths.dart';
 import 'package:car_fixing/features/layout/view/layout_view.dart';
 import 'package:car_fixing/features/layout/view_model/layout_cubit/cubit.dart';

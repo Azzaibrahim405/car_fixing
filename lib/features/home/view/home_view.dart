@@ -28,21 +28,18 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-
-
-
   @override
   Widget build(BuildContext context) {
-    var translate=context.loc!;
+    var translate = context.loc!;
     List<String> titles = [
       translate.oil,
-      translate.motoCar  ,
+      translate.tires,
       translate.dashboard,
-     translate.washing
+      translate.washing
     ];
     List<String> images = [
       'images/download.jpeg',
-      'images/1.jpeg',
+      'images/images (1).jpeg',
       'images/download (1).jpeg',
       'images/download (2).jpeg'
     ];
@@ -205,7 +202,7 @@ class _HomeViewState extends State<HomeView> {
             ),
             24.ph,
             Text(
-              context.loc!.motoCar,
+              context.loc!.motoCar ?? '',
               style: MainTextStyle.boldTextStyle(
                   fontSize: 17, color: MainColors.blackText),
             ),
@@ -221,15 +218,10 @@ class _HomeViewState extends State<HomeView> {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
-                            crossAxisSpacing: 4.0,
-                            mainAxisSpacing: 4.0),
-                    itemBuilder: (context, index) => InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, RoutePaths.productDetailsPath);
-                      },
-                      child: CategoryItem(
-                          image: images[index], title: titles[index]),
-                    ),
+                            crossAxisSpacing: 10.0,
+                            mainAxisSpacing: 10.0),
+                    itemBuilder: (context, index) => CategoryItem(
+                        image: images[index], title: titles[index]),
                     itemCount: 4);
               },
             )

@@ -24,12 +24,12 @@ class CategoryItem extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: 150.w,
-            height: 100.h,
-            decoration: BoxDecoration(
+            width: 180.w,
+            height: 130.h,
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
                 shape: BoxShape.rectangle,
                 image: DecorationImage(
-                    image: NetworkImage(
+                    image: AssetImage(
                       image,
                     ),
                     fit: BoxFit.cover)),

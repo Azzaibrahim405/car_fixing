@@ -34,7 +34,6 @@ class CarouselHome extends StatelessWidget {
                 onPageChanged: onPageChanged,
                 scrollPhysics: const BouncingScrollPhysics(),
 
-
                 viewportFraction: 1,
                 autoPlay: true,
                 height: MediaQuery.of(context).size.height * .25,

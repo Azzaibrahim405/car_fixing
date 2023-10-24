@@ -3,7 +3,11 @@
 // import 'route_paths.dart';
 //
 import 'package:car_fixing/core/router/route_paths.dart';
+import 'package:car_fixing/features/layout/view/layout_view.dart';
+import 'package:car_fixing/features/layout/view_model/layout_cubit/cubit.dart';
 import 'package:car_fixing/features/notifications/view_model/notifications_cubit.dart';
+import 'package:car_fixing/product_details/view/product_details_view.dart';
+import 'package:car_fixing/product_details/view_model/product_details_cubit/product_details_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -221,6 +225,12 @@ class AppRouter {
               create: (context) => NotificationsCubit(),
               child: const NotificationsView()),
         );
+        case RoutePaths.productDetailsPath:
+        return MaterialPageRoute(builder: (context) => BlocProvider(
+          create: (context) => ProductDetailsCubit(),
+          child:  ProductDetailsView()));
+          
+        
 //       case RoutePaths.settingsDetailsPath:
 //         return MaterialPageRoute(
 //           settings: settings,
@@ -238,12 +248,12 @@ class AppRouter {
 //           settings: settings,
 //           builder: (context) => const LoginView(),
 //         );
-//       case RoutePaths.layoutPath:
-//         return MaterialPageRoute(
-//           settings: settings,
-//           builder: (context) => BlocProvider(
-//               create: (context) => LayoutCubit(), child: const LayoutView()),
-//         );
+      case RoutePaths.layoutPath:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (context) => BlocProvider(
+              create: (context) => LayoutCubit(), child: const LayoutView()),
+        );
 //       case RoutePaths.addresses:
 //         return MaterialPageRoute(
 //           builder: (_) => const AddressesView(),
@@ -265,4 +275,5 @@ class AppRouter {
 //         );
 //     }
 //   }
-}}}
+}
+    return null;}}

@@ -205,7 +205,7 @@ class _HomeViewState extends State<HomeView> {
             ),
             24.ph,
             Text(
-              context.loc!.motoCar??'',
+              context.loc!.motoCar,
               style: MainTextStyle.boldTextStyle(
                   fontSize: 17, color: MainColors.blackText),
             ),
@@ -223,8 +223,13 @@ class _HomeViewState extends State<HomeView> {
                             crossAxisCount: 2,
                             crossAxisSpacing: 4.0,
                             mainAxisSpacing: 4.0),
-                    itemBuilder: (context, index) => CategoryItem(
-                        image: images[index], title: titles[index]),
+                    itemBuilder: (context, index) => InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, RoutePaths.productDetailsPath);
+                      },
+                      child: CategoryItem(
+                          image: images[index], title: titles[index]),
+                    ),
                     itemCount: 4);
               },
             )

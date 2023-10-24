@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get_storage/get_storage.dart';
 import 'core/router/app_router.dart';
 import 'core/router/route_paths.dart';
 import 'features/language/view_model/app_language_cubit/app_language_cubit.dart';

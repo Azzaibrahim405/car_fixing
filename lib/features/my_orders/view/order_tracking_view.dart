@@ -1,18 +1,16 @@
 import 'dart:async';
-
 import 'package:car_fixing/core/extensions/context_extension.dart';
 import 'package:car_fixing/core/extensions/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-
 import '../../../core/components/widget_appbar.dart';
 import '../../../core/theme/item_padding.dart';
 import '../../../core/theme/main_colors.dart';
 import '../../../core/theme/main_text_styles.dart';
 import '../../constants/images.dart';
 import 'widget/custom_row.dart';
+
 
 class OrderTrackingView extends StatelessWidget {
   OrderTrackingView({Key? key}) : super(key: key);

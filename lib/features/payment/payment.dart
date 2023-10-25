@@ -17,13 +17,13 @@ class PaymentScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-
             40.ph,
             const Text(
               'اجمالي السعر: ١٠٠ريال',
               style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
             ),
-30.ph,            const TextField(
+            30.ph,
+            const TextField(
               decoration: InputDecoration(
                 labelText: 'Card Number',
               ),
@@ -53,19 +53,21 @@ class PaymentScreen extends StatelessWidget {
             ),
             30.ph,
             ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: MainColors.primaryColor),
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: MainColors.primaryColor),
               onPressed: () {
-                 showDialog(
-
-              // context: context,
-              builder: (BuildContext context) {
-                return Center(child: PaymentSuccessDialog());
-              }, context: context,
-            );
-                // Navigator.of(context).push(MaterialPageRoute(builder: (context) => PaymentSuccessDialog(),));
-                // Perform payment processing logic here
+                showDialog(
+                  // context: context,
+                  builder: (BuildContext context) {
+                    return Center(child: PaymentSuccessDialog());
+                  },
+                  context: context,
+                );
               },
-              child: Text('الدفع الأن',style: TextStyle(color: MainColors.background),),
+              child: Text(
+                'الدفع الأن',
+                style: TextStyle(color: MainColors.background),
+              ),
             ),
           ],
         ),
@@ -73,4 +75,3 @@ class PaymentScreen extends StatelessWidget {
     );
   }
 }
-

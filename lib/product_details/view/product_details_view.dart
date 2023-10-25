@@ -11,8 +11,6 @@ import 'package:car_fixing/product_details/view_model/product_details_cubit/prod
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
-
 import '../../../core/components/custom_elevated_button.dart';
 import '../../../core/components/custom_listile.dart';
 import '../../../core/router/route_paths.dart';
@@ -27,12 +25,12 @@ class ProductDetailsView extends StatefulWidget {
 class _ProductDetailsViewState extends State<ProductDetailsView> {
   late ProductDetailsCubit cubit;
   @override
-  void initState() { 
-     cubit = ProductDetailsCubit.get(context);
+  void initState() {
+    cubit = ProductDetailsCubit.get(context);
 
     super.initState();
-    
   }
+
   @override
   Widget build(BuildContext context) {
     var translate = context.loc!;
@@ -45,9 +43,12 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
           children: [
             BlocBuilder<ProductDetailsCubit, ProductDetailsState>(
               builder: (context, state) {
-                var images=['images/fix2.jpg','images/fix3.webp','images/fix4.webp'];
+                var images = [
+                  'images/fix2.jpg',
+                  'images/fix3.webp',
+                  'images/fix4.webp'
+                ];
                 return CarouselAndDotted(
-
                     position: cubit.carouselSliderIndex,
                     controller: cubit.carouselSliderController,
                     onTap: (index) {
@@ -55,7 +56,9 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                     },
                     onPageChanged: (index, reason) {
                       cubit.changeCarouselSliderIndex(index);
-                    }, images:List.generate(images.length, (index) =>Image.asset(images[index]) ));
+                    },
+                    images: List.generate(
+                        images.length, (index) => Image.asset(images[index])));
               },
             ),
             20.ph,
@@ -89,36 +92,16 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                 Divider(
                   color: MainColors.dividerColor,
                 ),
-                // 15.ph,
                 const EvaluationProduct(),
-                // 24.ph,
-                // CustomDropDown(
-                //   hintText: translate.size,
-                //   items: List.generate(productCubit?.productAttributes?.length??0, (index) => productCubit?.productAttributes?[index].option??''),
-                // ),
-                // CustomDropDown(
-                //   hintText: translate.size,
-                //   items: cubit.sizeList,
-                // ),
-                // CustomDropDown(
-                //   hintText: translate.type,
-                //   items: cubit.typeList,
-                // ),
-                // CustomElevatedButton(
-                //   textColor: MainColors.primaryColor,
-                //   text: translate.addCart,
-                //   onPressed: () {
-                //     Navigator.pushNamed(context, RoutePaths.cartPath);
-                //   },
-                //   color: MainColors.background,
-                //   borderColor: MainColors.primaryColor,
-                // ),
-               50.ph,
-                 CustomElevatedButton(
+
+                50.ph,
+                CustomElevatedButton(
                   textColor: MainColors.background,
                   text: translate.addCart,
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => PaymentScreen(),));
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => PaymentScreen(),
+                    ));
                   },
                   color: MainColors.primaryColor,
                 )
